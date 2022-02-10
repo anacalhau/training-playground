@@ -4,14 +4,6 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
-    stages {
-        stage('build') {
-            steps {
-                echo "$NAME"
-                echo "$AGE"
-            }
-	}
-	
         stage('Input') {
             steps {
                 input('Do you want to proceed?')
