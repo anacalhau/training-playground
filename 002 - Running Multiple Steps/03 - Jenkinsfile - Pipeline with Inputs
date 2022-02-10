@@ -1,9 +1,15 @@
 pipeline {
+
+    parameters {
+        string(name: 'NAME', defaultValue: 'null', description: 'Enter name')
+	string(name: 'AGE', defaultValue: 'null', description: 'Enter age')
+	
     agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
 	}
+	
     stages {
         stage('build') {
             steps {
@@ -11,15 +17,5 @@ pipeline {
                 echo "$AGE"
             }
 	}
-        stage('Input') {
-            steps {
-                input('Do you want to proceed?')
-            }
-        }
-        stage('If Proceed is clicked') {
-            steps {
-                print('hello')
-            }
-        }
     }
 }
