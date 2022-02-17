@@ -17,6 +17,7 @@ pipeline {
 			echo 'NPM version'
 			sh 'npm --version'
 		}
+	}	
 	}
     }
 }
